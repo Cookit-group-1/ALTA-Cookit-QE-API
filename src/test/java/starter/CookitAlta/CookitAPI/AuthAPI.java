@@ -1,9 +1,9 @@
-package starter.DummyJSON.CookitAPI;
+package starter.CookitAlta.CookitAPI;
 
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import starter.DummyJSON.Utils.Constant;
+import starter.CookitAlta.Utils.Constant;
 
 import java.io.File;
 

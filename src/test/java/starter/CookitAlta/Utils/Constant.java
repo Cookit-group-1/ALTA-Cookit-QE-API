@@ -1,4 +1,4 @@
-package starter.DummyJSON.Utils;
+package starter.CookitAlta.Utils;
 
 public class Constant {
     public static String BASE_URL = "https://dummyjson.com/";

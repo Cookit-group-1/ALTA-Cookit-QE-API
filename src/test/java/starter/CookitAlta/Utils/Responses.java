@@ -1,4 +1,4 @@
-package starter.DummyJSON.Utils;
+package starter.CookitAlta.Utils;
 
 public class Responses {
     public static String PAGE = "page";
