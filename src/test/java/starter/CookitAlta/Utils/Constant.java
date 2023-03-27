@@ -5,7 +5,6 @@ public class Constant {
     public static final String DIR = System.getProperty("user.dir");
     public static String JSON_REQUEST = DIR+"/src/test/resources/JSON/JSONRequest/";
     public static String JSON_SCHEMA = DIR+"/src/test/resources/JSON/JSONSchema/";
-    public static String BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2ODMxMjc2OTgsInJvbGUiOiJVc2VyIiwidXNlcklkIjoxfQ.BbbJlpz89IUNpGcbbHKC_U5VyqUSJ9J-daw4EOBoNIw";
-
+    public static String BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2ODMxNDM2ODEsInJvbGUiOiJVc2VyIiwidXNlcklkIjoxfQ.ELnOuPw4DAPYF61mvR0FUpLlrl9889sQB_LAhgDXGdI";
 
 }
