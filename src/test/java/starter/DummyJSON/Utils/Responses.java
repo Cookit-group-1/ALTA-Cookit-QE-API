@@ -1,6 +1,6 @@
 package starter.DummyJSON.Utils;
 
-public class ReqresResponses {
+public class Responses {
     public static String PAGE = "page";
     public static String NAME = "name";
     public static String JOB = "job";
