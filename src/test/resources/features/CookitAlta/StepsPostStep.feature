@@ -1,4 +1,4 @@
-@Steps
+@Test
   Feature: Testing API Post Steps
     Scenario: insert new steps with valid data
       Given Post step with valid data parameter 1

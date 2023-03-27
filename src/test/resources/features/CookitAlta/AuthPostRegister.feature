@@ -1,4 +1,4 @@
-@Auth
+@Test
   Feature: Testing API post register
     Scenario: Register with valid data json
       Given register with valid data json
