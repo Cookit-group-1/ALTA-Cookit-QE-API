@@ -7,28 +7,28 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.CookitAlta.CookitAPI.AuthAPI;
+import starter.CookitAlta.CookitAPI.ContohAuthAPI;
 import starter.CookitAlta.Utils.Constant;
 
 import java.io.File;
 
-public class AuthLogin {
+public class ContohAuthLogin {
 
     @Steps
-    AuthAPI authApi;
+    ContohAuthAPI contohAuthApi;
 
     //Positive Case
 
     @Given("Lsogins with valid JSON")
     public void loginWithValidJSON() {
         File jsonRequest = new File(Constant.JSON_REQUEST + "/Auth/LoginValid.json");
-        authApi.postLogin(jsonRequest);
+        contohAuthApi.postLogin(jsonRequest);
 
     }
 
     @When("Ssend request post to login")
     public void sendRequestPostToLogin() {
-        SerenityRest.when().post(AuthAPI.POST_LOGIN);
+        SerenityRest.when().post(ContohAuthAPI.POST_LOGIN);
     }
 
     @And("Vsalidate json schema success login")
@@ -42,7 +42,7 @@ public class AuthLogin {
     @Given("Lsogin with invalid JSON")
     public void loginWithInvalidJSON() {
         File jsonRequest = new File(Constant.JSON_REQUEST + "Auth/LoginInvalid.json");
-        authApi.postLogin(jsonRequest);
+        contohAuthApi.postLogin(jsonRequest);
     }
 
 

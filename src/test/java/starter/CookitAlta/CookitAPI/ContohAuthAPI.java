@@ -7,7 +7,7 @@ import starter.CookitAlta.Utils.Constant;
 
 import java.io.File;
 
-public class AuthAPI {
+public class ContohAuthAPI {
     public static String POST_LOGIN = Constant.BASE_URL +"auth/login";
 
     @Step ("Post login with valid JSON")
