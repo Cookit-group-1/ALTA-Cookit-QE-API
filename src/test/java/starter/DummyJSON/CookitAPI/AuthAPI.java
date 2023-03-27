@@ -1,4 +1,4 @@
-package starter.DummyJSON.ReqAPI;
+package starter.DummyJSON.CookitAPI;
 
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
