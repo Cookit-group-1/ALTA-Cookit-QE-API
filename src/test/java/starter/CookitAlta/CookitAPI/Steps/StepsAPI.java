@@ -8,12 +8,12 @@ import starter.CookitAlta.Utils.Constant;
 import java.io.File;
 
 public class StepsAPI {
-    public static String POST_STEP = Constant.BASE_URL+"/recipes/{recipe_id}/steps";
+    public static String POST_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps";
 
     @Step("Post new recipes")
     public void postStep (int recipe_id, File json){
         SerenityRest.given()
-                .headers("Authorization", "Bearer" + Constant.BEARER_TOKEN)
+                .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
                 .pathParam("recipe_id", recipe_id)
                 .contentType(ContentType.JSON)
                 .body(json);
