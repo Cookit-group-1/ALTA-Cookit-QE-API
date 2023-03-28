@@ -28,4 +28,17 @@ public class StepsPutStep {
     @And("Validate json schema put step")
     public void validateJsonSchemaPutStep() {
     }
+
+    @And("Validate json schema invalid put step")
+    public void validateJsonSchemaInvalidPutStep() {
+
+    }
+
+    @Given("Put step with invalid json body")
+    public void putStepWithInvalidJsonBody() {
+    }
+
+    @And("Validate json schema invalid json put step")
+    public void validateJsonSchemaInvalidJsonPutStep() {
+    }
 }
