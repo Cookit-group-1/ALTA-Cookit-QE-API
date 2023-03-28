@@ -13,7 +13,7 @@
       And Validate json schema invalid put step
 
     Scenario: Put steps wih valid parameter and empty json
-      Given Put step with invalid json body
+      Given Put step with recipe id 18 and steps id 29 and invalid json body
       When Send request put step
       Then Status code should be 400 Bad Request
       And Validate json schema invalid json put step

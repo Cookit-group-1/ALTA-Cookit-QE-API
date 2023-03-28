@@ -9,7 +9,8 @@ import java.io.File;
 
 public class StepsAPI {
     public static String POST_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps";
-    public static String PUT_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps{step_id}";
+    public static String PUT_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps/{step_id}";
+    public static String PUT_STEP_VALID = Constant.BASE_URL+"recipes/18/steps/29";
 
     @Step("Post steps")
     public void postStep (int recipe_id, File json){
