@@ -1,0 +1,428 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "user_role": {
+              "type": "string"
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "total_like": {
+              "type": "integer"
+            },
+            "total_comment": {
+              "type": "integer"
+            },
+            "images": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "url_image": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url_image"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "user_role",
+            "profile_picture",
+            "name",
+            "description",
+            "type",
+            "status",
+            "total_like",
+            "total_comment",
+            "images"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "user_role": {
+              "type": "string"
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "total_like": {
+              "type": "integer"
+            },
+            "total_comment": {
+              "type": "integer"
+            },
+            "images": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "url_image": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url_image"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "user_role",
+            "profile_picture",
+            "name",
+            "description",
+            "type",
+            "status",
+            "total_like",
+            "total_comment",
+            "images"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "user_role": {
+              "type": "string"
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "total_like": {
+              "type": "integer"
+            },
+            "total_comment": {
+              "type": "integer"
+            },
+            "images": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "url_image": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url_image"
+                  ]
+                }
+              ]
+            },
+            "replied_recipe": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "user_role": {
+                  "type": "string"
+                },
+                "profile_picture": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "total_like": {
+                  "type": "integer"
+                },
+                "total_comment": {
+                  "type": "integer"
+                },
+                "images": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "url_image": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "url_image"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "username",
+                "user_role",
+                "profile_picture",
+                "name",
+                "description",
+                "type",
+                "status",
+                "total_like",
+                "total_comment",
+                "images"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "user_role",
+            "profile_picture",
+            "name",
+            "description",
+            "type",
+            "status",
+            "total_like",
+            "total_comment",
+            "images",
+            "replied_recipe"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "user_role": {
+              "type": "string"
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "total_like": {
+              "type": "integer"
+            },
+            "total_comment": {
+              "type": "integer"
+            },
+            "images": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "url_image": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url_image"
+                  ]
+                }
+              ]
+            },
+            "replied_recipe": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "user_role": {
+                  "type": "string"
+                },
+                "profile_picture": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "total_like": {
+                  "type": "integer"
+                },
+                "total_comment": {
+                  "type": "integer"
+                },
+                "images": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "url_image": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "url_image"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "username",
+                "user_role",
+                "profile_picture",
+                "name",
+                "description",
+                "type",
+                "status",
+                "total_like",
+                "total_comment",
+                "images"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "user_role",
+            "profile_picture",
+            "name",
+            "description",
+            "type",
+            "status",
+            "total_like",
+            "total_comment",
+            "images",
+            "replied_recipe"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}
