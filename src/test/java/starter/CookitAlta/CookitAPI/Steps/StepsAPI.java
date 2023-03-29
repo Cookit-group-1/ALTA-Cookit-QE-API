@@ -10,7 +10,7 @@ import java.io.File;
 public class StepsAPI {
     public static String POST_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps";
     public static String PUT_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps/{step_id}";
-    public static String PUT_STEP_VALID = Constant.BASE_URL+"recipes/18/steps/29";
+    public static String DELETE_STEP = Constant.BASE_URL+"recipes/{recipe_id}/steps/{step_id}";
 
     @Step("Post steps")
     public void postStep (int recipe_id, File json){
@@ -29,5 +29,13 @@ public class StepsAPI {
                 .pathParam("step_id", step_id)
                 .contentType(ContentType.JSON)
                 .body(json);
+    }
+
+    @Step("Delete step")
+    public void deleteStep(int recipe_id, int step_id) {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
+                .pathParam("recipe_id", recipe_id)
+                .pathParam("step_id", step_id);
     }
 }
