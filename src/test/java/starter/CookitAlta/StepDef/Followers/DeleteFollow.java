@@ -18,4 +18,9 @@ public class DeleteFollow {
     public void sendRequestDeleteFollow() {
         SerenityRest.when().delete(FollowersAPI.DELETE_FOLLOW);
     }
+
+    @Given("Delete follow with invalid data follow id {int}")
+    public void deleteFollowWithInvalidDataFollowId(int arg0) {
+        followersAPI.setDeleteFollow(arg0);
+    }
 }
