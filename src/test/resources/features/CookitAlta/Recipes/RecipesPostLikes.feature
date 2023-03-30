@@ -1,7 +1,7 @@
 @Test
 Feature: Testing API POST Recipes Like user's recipe user
   Scenario: POST Recipes Create Like user's recipe user
-    Given post Recipes Create Like user's recipe user 1
+    Given post Recipes Create Like user's recipe user 18
     When Send request post Like user's recipe
     Then Status code should be 200 OK
 

@@ -25,31 +25,10 @@ public class RecipesGetRecipes {
         SerenityRest.when().get(recipesGetRecipesAPI.RECIPES_GET_RECIPES_WITHOUT_PARAMETER);
     }
 
-    @When("Send request get recipes")
-    public void sendRequestGetRecipes() {
-        SerenityRest.when().get(recipesGetRecipesAPI.RECIPES_GET_RECIPES);
-    }
-
     @And("Validate get recipes json schema")
     public void validateGetRecipesJsonSchema() {
         File JsonSchema = new File(Constant.JSON_SCHEMA+"Recipes/RecipesGetRecipesValidation.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonSchema));
     }
-
-    @Given("Get recipes with parameter {int}")
-    public void getRecipesWithParameterId(int id) {
-        recipesGetRecipesAPI.setRecipesGetRecipes(id);
-    }
-
-    @Given("Get recipes with invalid parameter {string}")
-    public void getRecipesWithInvalidParameter(String id) {
-        recipesGetRecipesAPI.setRecipesGetRecipesInvalid(id);
-    }
-
-    @Given("Get recipes with invalid parameter more than page {int}")
-    public void getRecipesWithInvalidParameterMoreThanPage(int id) {
-        recipesGetRecipesAPI.setRecipesGetRecipes(id);
-    }
-
 
 }
