@@ -9,21 +9,20 @@ import starter.CookitAlta.Utils.Constant;
 import java.io.File;
 
 public class FollowersAPI {
-    public static String POST_FOLLOW = Constant.BASE_URL+"users/followers";
-    public static String DELETE_FOLLOW = Constant.BASE_URL+"users/followers/{follower_id}";
+    public static String POST_FOLLOW = Constant.BASE_URL+"users/follow/{user_id}";
+    public static String DELETE_FOLLOW = Constant.BASE_URL+"users/unfollow/{user_id}";
 
     @Step("Post followers with valid json body")
-    public void setPostFollow(File json){
+    public void setPostFollow(int user_id){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
-                .contentType(ContentType.JSON)
-                .body(json);
+                .pathParam("user_id", user_id);
     }
 
     @Step("Delete following")
-    public void setDeleteFollow(int id){
+    public void setDeleteFollow(int user_id){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
-                .pathParam("follower_id", id);
+                .pathParam("user_id", user_id);
     }
 }
