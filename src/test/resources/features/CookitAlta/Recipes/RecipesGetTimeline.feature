@@ -1,6 +1,5 @@
 @Test
 Feature: Testing API GET Recipes Timeline
-
   Scenario: GET recipes timeline without parameter
     Given Get recipes timeline without parameter
     When Send request get recipes timeline without parameter

@@ -15,22 +15,6 @@ public class RecipesGetTrending {
     @Steps
     RecipesGetTrendingAPI recipesGetTrendingAPI;
 
-    @Given("Get recipes trending with valid parameter {int}")
-    public void getRecipesTrendingWithValidParameter(int id) {
-        recipesGetTrendingAPI.setRecipesGetTrending(id);
-    }
-
-    @When("Send request get recipes trending")
-    public void sendRequestGetRecipesTrending() {
-        SerenityRest.when().get(recipesGetTrendingAPI.RECIPES_GET_TRENDING);
-    }
-
-    @And("Validate get trending json schema")
-    public void validateGetTrendingJsonSchema() {
-        File JsonSchema =new File(Constant.JSON_SCHEMA+"Recipes/RecipesGetTrendingValidation.json");
-        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonSchema));
-    }
-
     @Given("Get trending without parameter")
     public void getTrendingWithoutParameter() {
         recipesGetTrendingAPI.setRecipesGetTrendingWithoutParameter();
@@ -40,4 +24,11 @@ public class RecipesGetTrending {
     public void sendRequestGetRecipesTrendingWithoutParameter() {
         SerenityRest.when().get(recipesGetTrendingAPI.RECIPES_GET_TRENDING_WITHOUT_PARAMETER);
     }
+
+    @And("Validate get trending json schema")
+    public void validateGetTrendingJsonSchema() {
+        File JsonSchema =new File(Constant.JSON_SCHEMA+"Recipes/RecipesGetTrendingValidation.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonSchema));
+    }
+
 }
