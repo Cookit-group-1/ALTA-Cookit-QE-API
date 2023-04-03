@@ -42,7 +42,7 @@ public class CartsPutUsers {
 
     @When("Send request put update users carts invalid body json")
     public void sendRequestPutUpdateUsersCartsInvalidBodyJson() {
-        SerenityRest.when().put(CartsPutAPI.PUT_UPDATE_CARTS);
+        SerenityRest.when().put(CartsPutAPI.PUT_UPDATE_CARTS_INVALID);
 
     }
     @Then("Status code should be {int} Not found")

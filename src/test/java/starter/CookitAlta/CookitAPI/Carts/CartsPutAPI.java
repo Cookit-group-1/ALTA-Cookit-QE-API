@@ -10,6 +10,7 @@ import java.io.File;
 public class CartsPutAPI {
 
     public static String PUT_UPDATE_CARTS = Constant.BASE_URL+"users/carts/{cart_id}";
+    public static String PUT_UPDATE_CARTS_INVALID = Constant.BASE_URL+"users/carts/{cart_id}";
 
 
     @Step("Put update carts users")

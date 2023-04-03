@@ -10,27 +10,14 @@ import java.io.File;
 public class CommentsPostAPI {
 
     public static String POST_COMMENTS_RECIPES = Constant.BASE_URL+"recipes/{id}/comments";
-    public static String POST_COMMENTS_WITHOUT_ID = Constant.BASE_URL+"recipes/{id}/comments";
-    public static String POST_COMMENTS_WITHOUT_FIELD_COMMENTS = Constant.BASE_URL+"recipes/{id}/comments";
 
 
-    //    POST POSITIVE
+    //    POST
     @Step("Post comments recipes")
-    public void setPostCommentsRecipes(File json){
+    public void setPostCommentsRecipesId(int id, File json){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
-                .contentType(ContentType.JSON)
-                .body(json);
-    }
-//    POST NEGATIVE
-    @Step("Comments post recipes without id")
-    public void setPostCommentsWithoutId(){
-        SerenityRest.given();
-    }
-    @Step("Comments post recipes without fill field comments")
-    public void setPostRecipesWithoutComments(File json) {
-        SerenityRest.given()
-                .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
+                .pathParam("id",id)
                 .contentType(ContentType.JSON)
                 .body(json);
     }

@@ -14,40 +14,31 @@ public class CommentsPutRecipes {
     @Steps
     CommentsPutAPI commentsPutAPI;
 
-    @Given("Put update recipes comment")
-    public void putUpdateRecipesComment() {
-        File jsonRequest = new File(Constant.JSON_REQUEST + "CommentsPutRecipes.json");
-        commentsPutAPI.setPutCommentsRecipes(jsonRequest);
+    @Given("Put update recipes id {int} comment id {int}")
+    public void putUpdateRecipesCommentId(int recipes_id, int comments_id) {
+        File jsonRequest = new File(Constant.JSON_REQUEST + "Comments/CommentsPutRecipes.json");
+        commentsPutAPI.setPutCommentsRecipes(recipes_id, comments_id, jsonRequest);
     }
 
     @When("Send request put recipes comment")
     public void sendRequestPutRecipesComment() {
         SerenityRest.when().put(CommentsPutAPI.PUT_COMMENTS_RECIPES);
     }
-//    NEGATIVE STEP
-    @Given("Put update without id recipes and comment")
-    public void putUpdateWithoutIdRecipesAndComment() {
-        commentsPutAPI.setPutWithoutIdCommentsRecipes();
-
+    @Then("Status code put should be {int} OK")
+    public void statusCodePutShouldBeOK(int OK) {
+        SerenityRest.then().statusCode(OK);
     }
 
-    @When("Send request put update recipes comment")
-    public void sendRequestPutUpdateRecipesComment() {
-        SerenityRest.when().put(CommentsPutAPI.PUT_WITHOUT_ID_COMMENTS_RECIPES);
+    @Given("Put update invalid recipes id {int} comment id {int}")
+    public void putUpdateRecipesCommentInvalid(int recipes_id, int comments_id) {
+        File jsonRequest = new File(Constant.JSON_REQUEST + "Comments/CommentsPutRecipesInvalid.json");
+        commentsPutAPI.setPutCommentsRecipes(recipes_id, comments_id, jsonRequest);
     }
 
-    @Then("Status code should be {int} Bad Request")
-    public void statusCodeShouldBeBadRequest(int BadRequest) {
-        SerenityRest.then().statusCode(BadRequest);
+    @Given("Put update without body json recipes id {int} comment id {int}")
+    public void putUpdateWithoutBodyJsonRecipesIdCommentId(int recipes_id, int comments_id) {
+        File jsonRequest = new File(Constant.JSON_REQUEST + "Comments/CommentsPutRecipesWithoutBody.json");
+        commentsPutAPI.setPutCommentsRecipes(recipes_id, comments_id, jsonRequest);
     }
-//    NEGATIVE STEP
-    @Given("Put update with invalid parameter")
-    public void putUpdateWithInvalidParameter() {
-        commentsPutAPI.setPutInvalidParameter();
 
-    }
-    @When("Send request put update recipes comment invalid parameter")
-    public void sendRequestPutUpdateRecipesCommentInvalidParameter() {
-        SerenityRest.when().put(CommentsPutAPI.PUT_INVALID_PARAMETER);
-    }
 }
