@@ -33,31 +33,31 @@ public class RecipesPostUsersRecipes {
 
     @Given("post Recipes Insert new user's recipe without name json")
     public void postRecipesInsertNewUserSRecipeWithoutNameJson() {
-        File Json = new File(Constant.JSON_SCHEMA+"Recipes/RecipesPostUserRecipesWithoutName.json");
+        File Json = new File(Constant.JSON_REQUEST+"Recipes/RecipesPostUserRecipesWithoutName.json");
         recipesPostUsersRecipesAPI.setRecipesPostUsersRecipes(Json);
     }
 
     @Given("post Recipes Insert new user's recipe without description json")
     public void postRecipesInsertNewUserSRecipeWithoutDescriptionJson() {
-        File Json = new File(Constant.JSON_SCHEMA+"Recipes/RecipesPostUserRecipesWithoutDescription.json");
+        File Json = new File(Constant.JSON_REQUEST+"Recipes/RecipesPostUserRecipesWithoutDescription.json");
         recipesPostUsersRecipesAPI.setRecipesPostUsersRecipes(Json);
     }
 
     @Given("post Recipes Insert new user's recipe without Fill Field name json")
     public void postRecipesInsertNewUserSRecipeWithoutFillFieldNameJson() {
-        File Json = new File(Constant.JSON_SCHEMA+"Recipes/RecipesPostUserRecipesWithoutFillFieldName.json");
+        File Json = new File(Constant.JSON_REQUEST+"Recipes/RecipesPostUserRecipesWithoutFillFieldName.json");
         recipesPostUsersRecipesAPI.setRecipesPostUsersRecipes(Json);
     }
 
     @Given("post Recipes Insert new user's recipe without Fill Field description json")
     public void postRecipesInsertNewUserSRecipeWithoutFillFieldDescriptionJson() {
-        File Json = new File(Constant.JSON_SCHEMA+"Recipes/RecipesPostUserRecipesWithoutFillFieldDescription.json");
+        File Json = new File(Constant.JSON_REQUEST+"Recipes/RecipesPostUserRecipesWithoutFillFieldDescription.json");
         recipesPostUsersRecipesAPI.setRecipesPostUsersRecipes(Json);
     }
 
     @Given("post Recipes Insert new user's recipe without all Fill Field json")
     public void postRecipesInsertNewUserSRecipeWithoutAllFillFieldJson() {
-        File Json = new File(Constant.JSON_SCHEMA+"Recipes/RecipesPostUserRecipesWithoutAllField.json");
+        File Json = new File(Constant.JSON_REQUEST+"Recipes/RecipesPostUserRecipesWithoutAllField.json");
         recipesPostUsersRecipesAPI.setRecipesPostUsersRecipes(Json);
     }
 

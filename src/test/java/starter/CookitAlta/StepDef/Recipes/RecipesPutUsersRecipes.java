@@ -34,25 +34,25 @@ public class RecipesPutUsersRecipes {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonSchema));
     }
 
-    @Given("Put Recipes Update user's recipes valid json without field name json")
+    @Given("Put Recipes Update user's recipes valid json without field name json id {int}")
     public void putRecipesUpdateUserSRecipesValidJsonWithoutFieldNameJson(int id) {
         File JsonRequest = new File(Constant.JSON_REQUEST+"Recipes/RecipesPutUsersRecipesWithoutFieldName.json");
         recipesPutUsersRecipesAPI.setRecipesPutUsersRecipes(id,JsonRequest);
     }
 
-    @Given("Put Recipes Update user's recipes valid json without field description json")
+    @Given("Put Recipes Update user's recipes valid json without field description json id {int}")
     public void putRecipesUpdateUserSRecipesValidJsonWithoutFieldDescriptionJson(int id) {
         File JsonRequest = new File(Constant.JSON_REQUEST+"Recipes/RecipesPutUsersRecipesWithoutFieldDescription.json");
         recipesPutUsersRecipesAPI.setRecipesPutUsersRecipes(id,JsonRequest);
     }
 
-    @Given("Put Recipes Update user's recipes valid json with empty field name json")
+    @Given("Put Recipes Update user's recipes valid json with empty field name json id {int}")
     public void putRecipesUpdateUserSRecipesValidJsonWithEmptyFieldNameJson(int id) {
         File JsonRequest = new File(Constant.JSON_REQUEST+"Recipes/RecipesPutUsersRecipesWithoutEmptyFieldName.json");
         recipesPutUsersRecipesAPI.setRecipesPutUsersRecipes(id,JsonRequest);
     }
 
-    @Given("Put Recipes Update user's recipes valid json with empty field description json")
+    @Given("Put Recipes Update user's recipes valid json with empty field description json id {int}")
     public void putRecipesUpdateUserSRecipesValidJsonWithEmptyFieldDescriptionJson(int id) {
         File JsonRequest = new File(Constant.JSON_REQUEST+"Recipes/RecipesPutUsersRecipesWithoutEmptyFieldDescription.json");
         recipesPutUsersRecipesAPI.setRecipesPutUsersRecipes(id,JsonRequest);

@@ -1,235 +1,63 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "data": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "username": {
-          "type": "string"
-        },
-        "user_role": {
-          "type": "string"
-        },
-        "profile_picture": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "total_like": {
-          "type": "integer"
-        },
-        "total_comment": {
-          "type": "integer"
-        },
-        "images": {
-          "type": "array",
-          "items": [
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "url_image": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "url_image"
-              ]
-            }
-          ]
-        },
-        "steps": {
-          "type": "array",
-          "items": [
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name"
-              ]
-            }
-          ]
-        },
-        "ingredients": {
-          "type": "array",
-          "items": [
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "integer"
-                },
-                "ingredient_details": {
-                  "type": "array",
-                  "items": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "integer"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "quantity": {
-                          "type": "integer"
-                        },
-                        "uint": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "id",
-                        "name",
-                        "quantity",
-                        "uint"
-                      ]
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "integer"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "quantity": {
-                          "type": "integer"
-                        },
-                        "uint": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "id",
-                        "name",
-                        "quantity",
-                        "uint"
-                      ]
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "id",
-                "name",
-                "price",
-                "ingredient_details"
-              ]
-            }
-          ]
-        }
+  "data": {
+    "id": 1,
+    "username": "Benjamin29",
+    "user_role": "VerifiedUser",
+    "profile_picture": "https://storage.googleapis.com/alta-cookit/static/images/Dark%20Cythe.jpg",
+    "name": "Indomie Spesial",
+    "description": "Indomie terenak sepanjang masa",
+    "status": "None",
+    "total_like": 79,
+    "total_comment": 117,
+    "images": [
+      {
+        "id": 1,
+        "url_image": "https://storage.googleapis.com/alta-cookit/static/images/Indomie%20Spesial.jpg"
+      }
+    ],
+    "steps": [
+      {
+        "id": 1,
+        "name": "Rebus air sebanyak 300ml dengan api sedang hingga mendidih"
       },
-      "required": [
-        "id",
-        "username",
-        "user_role",
-        "profile_picture",
-        "name",
-        "description",
-        "status",
-        "total_like",
-        "total_comment",
-        "images",
-        "steps",
-        "ingredients"
-      ]
-    },
-    "message": {
-      "type": "string"
-    }
+      {
+        "id": 2,
+        "name": "Sembari menunggu air yang mendidih, siapkan piring dan tuangkan bumbu ke piring tersebut"
+      },
+      {
+        "id": 3,
+        "name": "Setelah air mendidih, masukan mie"
+      },
+      {
+        "id": 4,
+        "name": "Setelah matang, tuangkan mie ke dalam mangkuk yang telah diisi bumbu"
+      },
+      {
+        "id": 5,
+        "name": "Indomie siap disajikan"
+      }
+    ],
+    "ingredients": [
+      {
+        "id": 1,
+        "name": "Original",
+        "price": 5000,
+        "ingredient_details": [
+          {
+            "id": 1,
+            "name": "Bumbu Indomie (Original)",
+            "quantity": 1,
+            "uint": "pcs"
+          },
+          {
+            "id": 2,
+            "name": "Minyak Indomie (Original)",
+            "quantity": 1,
+            "uint": "pcs"
+          }
+        ]
+      }
+    ]
   },
-  "required": [
-    "data",
-    "message"
-  ]
+  "message": "successfully read details of recipe"
 }
