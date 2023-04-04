@@ -1,4 +1,4 @@
-@Test
+@Testcarts
 Feature: Post users carts
   Scenario: insert new users carts
     Given Post insert new users carts

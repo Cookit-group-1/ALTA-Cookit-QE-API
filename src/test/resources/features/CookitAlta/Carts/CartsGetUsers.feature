@@ -1,4 +1,4 @@
-@Test
+@Testcarts
 Feature:  Get user carts
   Scenario: get list of users carts
     Given Get list users carts

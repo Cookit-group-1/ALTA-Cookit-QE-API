@@ -1,7 +1,7 @@
-@Test
+@Testcarts
 Feature: Delete users carts
   Scenario: delete users cart
-    Given Delete users cart id 75
+    Given Delete users cart id 181
     When Send request delete users cart
     Then Status code should be 200 OK
 

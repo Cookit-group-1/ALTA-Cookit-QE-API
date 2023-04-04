@@ -1,7 +1,7 @@
 @Test
 Feature: Delete comments recipes
   Scenario: delete recipes comment
-    Given Delete recipes id 18 comment id 44
+    Given Delete recipes id 18 comment id 51
     When Send request delete comments recipes
     Then Status code should be 200 OK
 
