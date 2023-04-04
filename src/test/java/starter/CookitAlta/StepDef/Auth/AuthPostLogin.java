@@ -3,6 +3,7 @@ package starter.CookitAlta.StepDef.Auth;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.CookitAlta.CookitAPI.Auth.AuthAPI;
@@ -28,7 +29,7 @@ public class AuthPostLogin {
     @And("Validate json schema post Login")
     public void validateJsonSchemaPostLogin() {
         File JsonValidate = new File(Constant.JSON_SCHEMA+"Auth/PostLoginValidation.json");
-        authAPI.setPostLoginUtama(JsonValidate);
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonValidate));
     }
 
     //negative

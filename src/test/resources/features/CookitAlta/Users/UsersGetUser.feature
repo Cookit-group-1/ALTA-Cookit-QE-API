@@ -1,4 +1,4 @@
-@Test
+
   Feature: Testing API Get User
     Scenario: Get user with valid data
       Given Get user with valid data
