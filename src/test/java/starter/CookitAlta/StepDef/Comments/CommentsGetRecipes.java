@@ -17,63 +17,42 @@ public class CommentsGetRecipes {
     @Steps
     CommentsGetAPI commentsGetAPI;
 
-//   GET COMMENTS RECIPES STEPS 1
+//   GET COMMENTS RECIPES
 
     @Given("Comments recipes with valid data id {int}")
     public void CommentsRecipesWithValidDataId(int id) {
-        File jsonRequest = new File(Constant.JSON_REQUEST+"Comments/CommentsGetRecipes.json");
-        commentsGetAPI.setGetCommentsRecipes(id,jsonRequest);
+        File jsonRequest = new File(Constant.JSON_REQUEST + "Comments/CommentsGetRecipes.json");
+        commentsGetAPI.setGetCommentsRecipes(id, jsonRequest);
     }
 
     @When("Send request get comments recipes")
     public void sendRequestGetCommentsRecipes() {
         SerenityRest.when().get(CommentsGetAPI.GET_COMMENTS_RECIPES);
     }
+    @Then("Status code get should be {int} OK")
+    public void statusCodeGetShouldBeOK(int OK) {
+        SerenityRest.then().statusCode(OK);
+    }
 
     @And("Validate json schema comments recipes")
     public void validateJsonSchemaCommentsRecipes() {
-        File jsonSchema = new File(Constant.JSON_SCHEMA + "CommentsGetRecipesValidation.json");
+        File jsonSchema = new File(Constant.JSON_SCHEMA + "Comments/CommentsGetRecipesValidation.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
-
-
+    }
+//    NEGATIVE STEP
+    @Given("Get comment without parameter id")
+    public void getCommentWithoutParameterId() {
+        commentsGetAPI.setCommentsRecipesWithoutId();
     }
 
-    //   NEGATIVE STEPS 1
-    @Given("Get list recipes without parameter id")
-    public void getListRecipesWithoutParameterId() {
-        commentsGetAPI.setGetCommentsRecipesWithoutId();
-
+    @When("Send request get comment recipes without parameter id")
+    public void sendRequestGetCommentRecipesWithoutParameterId() {
+        SerenityRest.when().get(CommentsGetAPI.GET_COMMENTS_RECIPES_WITHOUT_ID);
     }
 
-    @When("Send request get comments recipes without parameter")
-    public void sendRequestGetCommentsRecipesWithoutParameter() {
-        SerenityRest.when().get(CommentsGetAPI.GET_COMMENTS_WITHOUT_ID);
-    }
-
-    @Then("Status code should be {int} internal server error")
-    public void statusCodeShouldBeInternalServerError(int InternalServerError) {
-        SerenityRest.then().statusCode(InternalServerError);
-    }
-
-    //    NEGATIVE STEPS 2
-    @Given("Get list recipes without field comment")
-    public void getListRecipesWithoutFieldComment() {
-        File jsonRequest = new File(Constant.JSON_REQUEST+"CommentsGetRecipesWithoutFieldComments.json");
-        commentsGetAPI.setGetCommentsWithoutComments(jsonRequest);
-    }
-
-    @When("Send request get comments recipes without field comment")
-    public void sendRequestGetCommentsRecipesWithoutFieldComment() {
-        SerenityRest.when().get(CommentsGetAPI.GET_COMMENTS_WITHOUT_COMMENTS);
-    }
-
-    @Then("Status code should be {int} Not Found")
-    public void statusCodeShouldBeNotFound(int NotFound) {
+    @Then("Status code get should be {int} Not found")
+    public void statusCodeGetShouldBeNotFound(int NotFound) {
         SerenityRest.then().statusCode(NotFound);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int OK) {
-        SerenityRest.then().statusCode(OK);
-    }
 }

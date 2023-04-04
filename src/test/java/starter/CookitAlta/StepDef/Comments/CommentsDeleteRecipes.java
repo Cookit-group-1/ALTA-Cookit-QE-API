@@ -12,33 +12,23 @@ public class CommentsDeleteRecipes {
     CommentsDeleteAPI commentsDeleteAPI;
 
 //    DELETE POSITIVE
-    @Given("Delete recipes comment")
-    public void deleteRecipesComment() {
-        commentsDeleteAPI.setDeleteComments();
+    @Given("Delete recipes id {int} comment id {int}")
+    public void deleteRecipesComment(int recipes_id, int comments_id) {
+        commentsDeleteAPI.setDeleteComments(recipes_id,comments_id);
     }
 
     @When("Send request delete comments recipes")
     public void sendRequestDeleteCommentsRecipes() {
         SerenityRest.when().delete(CommentsDeleteAPI.DELETE_COMMENTS_RECIPES);
     }
-//    DELETE NEGATIVE
-    @Given("delete recipes comment with invalid parameter id")
-    public void deleteRecipesCommentWithInvalidParameterId() {
-        commentsDeleteAPI.setDeleteCommentsRecipes();
+//    NEGATIVE
+    @Given("Delete recipes id {int} invalid comments id {int}")
+    public void deleteRecipesIdInvalidCommentsId(int recipes_id, int comments_id) {
+        commentsDeleteAPI.setDeleteComments(recipes_id,comments_id);
     }
 
-    @When("Send request delete invalid id")
-    public void sendRequestDeleteInvalidId() {
-        SerenityRest.when().delete(CommentsDeleteAPI.DELETE_COMMENTS_RECIPES_INVALID);
-    }
-//    DELETE NEGATIVE
-    @Given("Delete without invalid parameter")
-    public void deleteWithoutInvalidParameter() {
-        commentsDeleteAPI.setDeleteCommentsRecipesInvalid();
-    }
-
-    @When("Send request delete invalid parameter")
-    public void sendRequestDeleteInvalidParameter() {
-        SerenityRest.when().delete(CommentsDeleteAPI.DELETE_INVALID_PARAMETER);
+    @Given("Delete invalid recipes id {int} comments id {int}")
+    public void deleteInvalidRecipesIdCommentsId(int recipes_id, int comments_id) {
+        commentsDeleteAPI.setDeleteComments(recipes_id,comments_id);
     }
 }

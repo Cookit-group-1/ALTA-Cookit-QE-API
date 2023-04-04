@@ -9,8 +9,7 @@ import java.io.File;
 
 public class CommentsGetAPI {
     public static String GET_COMMENTS_RECIPES = Constant.BASE_URL + "recipes/{id}/comments";
-    public static String GET_COMMENTS_WITHOUT_ID = Constant.BASE_URL + "recipes/{}/comments";
-    public static String GET_COMMENTS_WITHOUT_COMMENTS = Constant.BASE_URL + "recipes/{id}/comments";
+    public static String GET_COMMENTS_RECIPES_WITHOUT_ID = Constant.BASE_URL + "recipes//comments";
 
 
     //    GET POSITIVE
@@ -21,18 +20,10 @@ public class CommentsGetAPI {
                 .pathParam("id",id)
                 .contentType(ContentType.JSON)
                 .body(json);
-    }
-//    GET NEGATIVE
-    @Step("Comments recipes without parameter id")
-    public void setGetCommentsRecipesWithoutId() {
-        SerenityRest.given();
-    }
 
-    @Step("Comments recipes without fill field comments")
-    public void setGetCommentsWithoutComments(File json) {
-        SerenityRest.given()
-                .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
-                .contentType(ContentType.JSON)
-                .body(json);
+    }
+    @Step("Comments recipes without parameter id")
+    public void setCommentsRecipesWithoutId(){
+        SerenityRest.given();
     }
 }

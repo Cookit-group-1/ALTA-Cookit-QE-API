@@ -1,4 +1,4 @@
-package starter.CookitAlta.CookitAPI.Comments;
+package starter.CookitAlta.CookitAPI.Carts;
 
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
@@ -7,19 +7,16 @@ import starter.CookitAlta.Utils.Constant;
 
 import java.io.File;
 
-public class CommentsPostAPI {
+public class CartsGetAPI {
+    public static String GET_CARTS_USERS = Constant.BASE_URL+"users/carts?page=1&limit=2";
 
-    public static String POST_COMMENTS_RECIPES = Constant.BASE_URL+"recipes/{id}/comments";
 
 
-    //    POST
-    @Step("Post comments recipes")
-    public void setPostCommentsRecipesId(int id, File json){
+    @Step("Carts users")
+    public void setCartsUsers(File json){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
-                .pathParam("id",id)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
-
 }

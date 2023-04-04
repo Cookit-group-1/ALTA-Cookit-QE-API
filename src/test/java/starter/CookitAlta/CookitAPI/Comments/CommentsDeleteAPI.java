@@ -6,25 +6,17 @@ import starter.CookitAlta.Utils.Constant;
 
 public class CommentsDeleteAPI {
 
-    public static String DELETE_COMMENTS_RECIPES = Constant.BASE_URL+"recipes/{id}/comments/{id}";
-    public static String DELETE_COMMENTS_RECIPES_INVALID = Constant.BASE_URL+"recipes/{1000}/comments/{1000}";
-    public static String DELETE_INVALID_PARAMETER = Constant.BASE_URL+"recipes/{id}/commentsxyz/{id}";
+    public static String DELETE_COMMENTS_RECIPES = Constant.BASE_URL+"recipes/{recipes_id}/comments/{comments_id}";
+
 
 
 
     @Step("Delete comments recipes")
-    public void setDeleteComments(){
-        SerenityRest.given();
+    public void setDeleteComments(int recipes_id, int comments_id){
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN)
+                .pathParam("recipes_id",recipes_id)
+                .pathParam("comments_id",comments_id);
     }
-
-    @Step("Delete comments recipes with invalid id")
-    public void setDeleteCommentsRecipes(){
-        SerenityRest.given();
-    }
-    @Step("Delete comments recipes invalid parameter")
-    public void setDeleteCommentsRecipesInvalid(){
-        SerenityRest.given();
-    }
-
 
 }

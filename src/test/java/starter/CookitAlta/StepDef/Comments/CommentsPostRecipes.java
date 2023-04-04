@@ -16,11 +16,11 @@ public class CommentsPostRecipes {
     CommentsPostAPI commentsPostAPI;
 
 
-    //    POST COMMENT RECIPES STEP 2
-    @Given("Insert new recipes comment")
-    public void insertNewRecipesComment() {
-        File jsonRequest = new File(Constant.JSON_REQUEST + "CommentsPostRecipes.json");
-        commentsPostAPI.setPostCommentsRecipes(jsonRequest);
+    //    POST COMMENT RECIPES STEP
+    @Given("Insert new recipes comment id {int}")
+    public void insertNewRecipesCommentId(int id) {
+        File jsonRequest = new File(Constant.JSON_REQUEST+"Comments/CommentsPostRecipes.json");
+        commentsPostAPI.setPostCommentsRecipesId(id,jsonRequest);
     }
 
     @When("Send request update recipes comment")
@@ -31,33 +31,20 @@ public class CommentsPostRecipes {
 
     @And("Validate json schema comments post recipes")
     public void validateJsonSchemaCommentsPostRecipes() {
-        File jsonSchema = new File(Constant.JSON_SCHEMA + "CommentsPostRecipesValidation.json");
+        File jsonSchema = new File(Constant.JSON_SCHEMA + "Comments/CommentsPostRecipesValidation.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
 
     }
-
-    //    NEGATIVE POST
-    @Given("Post insert recipes comment without parameter id")
-    public void postInsertRecipesCommentWithoutParameterId() {
-        commentsPostAPI.setPostCommentsWithoutId();
-
+//    NEGATIVE
+    @Given("Insert without fill field comment id {int}")
+    public void insertWithoutFillFieldCommentId(int id) {
+        File jsonRequest = new File(Constant.JSON_REQUEST+"Comments/CommentsPostRecipesWithoutFieldComment.json");
+        commentsPostAPI.setPostCommentsRecipesId(id,jsonRequest);
     }
 
-    @When("Send request post comments recipes without parameter")
-    public void sendRequestPostCommentsRecipesWithoutParameter() {
-        SerenityRest.when().post(CommentsPostAPI.POST_COMMENTS_WITHOUT_ID);
-    }
+    @When("Send request post insert new recipes comment without field comment")
+    public void sendRequestPostInsertNewRecipesCommentWithoutFieldComment() {
+        SerenityRest.when().post(CommentsPostAPI.POST_COMMENTS_RECIPES);
 
-    //    NEGATIVE POST
-    @Given("Post insert new recipes without field comment")
-    public void postInsertNewRecipesWithoutFieldComment() {
-        File jsonRequest = new File(Constant.JSON_REQUEST + "CommentsGetRecipesWithoutFieldComments.json");
-        commentsPostAPI.setPostRecipesWithoutComments(jsonRequest);
-
-    }
-
-    @When("Send request post comments recipes without field comment")
-    public void sendRequestPostCommentsRecipesWithoutFieldComment() {
-        SerenityRest.when().post(CommentsPostAPI.POST_COMMENTS_WITHOUT_FIELD_COMMENTS);
     }
 }
