@@ -17,6 +17,7 @@ public class UsersAPI {
     public static String USERS_FOLLOWING = Constant.BASE_URL + "users/following";
     public static String USERS_UPGRADE = Constant.BASE_URL + "users/upgrade";
     public static String USERS_UPDATE = Constant.BASE_URL + "users";
+    public static String POST_LOGIN = Constant.BASE_URL + "users";
 
 
     // LOGIN SCENARIO
@@ -74,7 +75,7 @@ public class UsersAPI {
     public void sendUpdateUsersInvalid(String token){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + token)
-                .put(UsersAPI.USERS_UPDATE);;
+                .put(UsersAPI.USERS_UPDATE);
     }
 
     // END PUT / UPDATE DATA USERS
@@ -134,7 +135,7 @@ public class UsersAPI {
     public void sendUpdateInvalid(String token){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + token)
-                .post(UsersAPI.USERS_UPGRADE);;
+                .post(UsersAPI.USERS_UPGRADE);
     }
     // END INVALID TOKEN UPGRADE
     // END UPGrADE USERS
