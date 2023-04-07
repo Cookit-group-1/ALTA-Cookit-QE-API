@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "from_user_id": {
+              "type": "integer"
+            },
+            "to_user_id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "from_user_id",
+            "to_user_id",
+            "username",
+            "profile_picture",
+            "role"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "from_user_id": {
+              "type": "integer"
+            },
+            "to_user_id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "profile_picture": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "from_user_id",
+            "to_user_id",
+            "username",
+            "profile_picture",
+            "role"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}

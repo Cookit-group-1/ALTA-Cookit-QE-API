@@ -12,14 +12,14 @@ import starter.CookitAlta.Utils.Constant;
 
 import java.io.File;
 
-public class UsersGETSinggleUserStepDef {
+public class UsersGetUserStepDef {
 
     @Steps
     UsersAPI usersAPI;
 
-    @Given("Get all data users with {string} as path")
-    public void getAllDataUsersWithAsPath(String path) {
-        usersAPI.getAllDataUser(path);
+    @Given("Get all data users with token")
+    public void getAllDataUsersWithAsPath() {
+        usersAPI.getAllDataUser(Constant.BEARER_TOKEN);
     }
 
     @When("Get all users request")
@@ -40,4 +40,15 @@ public class UsersGETSinggleUserStepDef {
                 .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
+
+    @Given("Get data users without token")
+    public void getDataUsersWithoutToken() {
+        usersAPI.getAllDataUser(Constant.INVALID_TOKEN);
+        
+    }
+
+    @Given("Get data users with invalid token")
+    public void getDataUsersWithInvalidToken() {
+        usersAPI.getAllDataUser();
+    }
 }
