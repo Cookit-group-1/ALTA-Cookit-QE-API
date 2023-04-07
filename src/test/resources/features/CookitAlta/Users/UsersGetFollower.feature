@@ -1,4 +1,4 @@
-@Testshidiq
+@Test
 Feature: Get Users follower
   @Test @PositiveCase
   Scenario: Get users follower with valid token

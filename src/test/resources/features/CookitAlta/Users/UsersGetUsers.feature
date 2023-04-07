@@ -1,4 +1,4 @@
-@Login
+@Test
 Feature: Get All Users
   @Test @PositiveCase
   Scenario: Get all data users with valid url

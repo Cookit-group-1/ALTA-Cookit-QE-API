@@ -6,55 +6,36 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.CookitAlta.CookitAPI.Users.UsersAPI;
+import starter.CookitAlta.CookitAPI.Transaction.TransactionApi;
 import starter.CookitAlta.Utils.Constant;
 
 import java.io.File;
 
 public class UsersGetTransactionStepdef {
     @Steps
-    UsersAPI usersAPI;
+    TransactionApi transactionApi;
 
-    @Given("Get users data following with valid token")
-    public void getUsersDataFollowerWithValidToken() {
-        usersAPI.getFollowing(Constant.BEARER_TOKEN);
-    }
-
-    @When("Get users data request following")
-    public void getUsersDataRequest() {
-        SerenityRest.when().get(UsersAPI.USERS_FOLLOWING);
-    }
-
-    @And("Validate json schema users following")
-    public void validateJsonSchemaUsersFollower() {
-        File jsonSchema = new File(Constant.JSON_SCHEMA + "Users/ResponsesUsersFollowing.json");
-        SerenityRest.then()
-                .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
-    }
-
-    @Given("Get users data following with invalid token")
-    public void getUsersDataFollowerWithInvalidToken() {
-        usersAPI.getFollowing(Constant.INVALID_TOKEN);
-    }
-
-    @Given("Get users data following without token")
-    public void getUsersDataFollowerWithoutToken() {
-        usersAPI.getWithoutokenFollowing();
-    }
+    // transaction
 
     @Given("Get users data transaction with valid token")
     public void getUsersDataTransactionWithValidToken() {
+        transactionApi.getTransaction(Constant.BEARER_TOKEN);
     }
 
     @When("Get users data request transaction")
     public void getUsersDataRequestTransaction() {
+        SerenityRest.when().get(TransactionApi.GET_POST_TRANSACTION_USER);
     }
 
     @And("Validate json schema users transaction")
     public void validateJsonSchemaUsersTransaction() {
+        File jsonSchema = new File(Constant.JSON_SCHEMA + "Transaction/GetTransactionIdUsers.json");
+        SerenityRest.then()
+                .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
     @Given("Get users data transaction with invalid token")
     public void getUsersDataTransactionWithInvalidToken() {
+        transactionApi.getTransaction(Constant.INVALID_TOKEN);
     }
 }

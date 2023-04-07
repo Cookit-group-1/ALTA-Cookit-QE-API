@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "order_id": {
+          "type": "string"
+        },
+        "virtual_account_number": {
+          "type": "string"
+        },
+        "transaction_details": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "id_seller": {
+                  "type": "integer"
+                },
+                "seller_user_username": {
+                  "type": "string"
+                },
+                "recipe_name": {
+                  "type": "string"
+                },
+                "ingredient_name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "quantity": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "id_seller",
+                "seller_user_username",
+                "recipe_name",
+                "ingredient_name",
+                "price",
+                "quantity"
+              ]
+            }
+          ]
+        },
+        "customer_id": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "payment_method": {
+          "type": "string"
+        },
+        "shipping_fee": {
+          "type": "integer"
+        },
+        "shipping_method": {
+          "type": "string"
+        },
+        "total_price": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "order_id",
+        "virtual_account_number",
+        "transaction_details",
+        "customer_id",
+        "status",
+        "payment_method",
+        "shipping_fee",
+        "shipping_method",
+        "total_price",
+        "created_at"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}

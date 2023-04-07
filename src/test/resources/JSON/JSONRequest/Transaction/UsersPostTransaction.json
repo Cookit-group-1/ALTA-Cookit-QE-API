@@ -1,0 +1,11 @@
+{
+  "transaction_details": [
+    {
+      "ingredient_id": 1,
+      "quantity": 5
+    }
+  ],
+  "payment_method": "BCA",
+  "shipping_fee": 9000,
+  "shipping_method": "Shopee Food"
+}

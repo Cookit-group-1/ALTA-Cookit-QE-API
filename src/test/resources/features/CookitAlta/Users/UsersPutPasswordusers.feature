@@ -1,4 +1,4 @@
-@Testshidiq
+@Test
 Feature: Update password data users
 @Test @PositiveCase
 Scenario: Update password users with valid token

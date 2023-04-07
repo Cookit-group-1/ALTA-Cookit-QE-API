@@ -1,4 +1,4 @@
-@Testshidiq
+@Test
 Feature: Upgrade data users
   @Test @PositiveCase
   Scenario: Upgrade new users with valid token

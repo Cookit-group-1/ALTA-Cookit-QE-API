@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "id_seller": {
+          "type": "integer"
+        },
+        "seller_user_username": {
+          "type": "string"
+        },
+        "recipe_name": {
+          "type": "string"
+        },
+        "ingredient_name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "quantity": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "id_seller",
+        "seller_user_username",
+        "recipe_name",
+        "ingredient_name",
+        "price",
+        "quantity"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}

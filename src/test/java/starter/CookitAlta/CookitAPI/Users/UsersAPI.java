@@ -11,13 +11,13 @@ import java.util.Map;
 
 public class UsersAPI {
     public static String GET_SINGGLE_USER = Constant.BASE_URL+"users";
-    public static String PUT_USERS = Constant.BASE_URL+"users";
+    public static String PUT_USERS_PASSWORD = Constant.BASE_URL+"users/password";
     public static String POST_LOGIN_USERS = Constant.BASE_URL+"login";
     public static String USERS_FOLLOWER = Constant.BASE_URL + "users/follower";
     public static String USERS_FOLLOWING = Constant.BASE_URL + "users/following";
     public static String USERS_UPGRADE = Constant.BASE_URL + "users/upgrade";
     public static String USERS_UPDATE = Constant.BASE_URL + "users";
-    public static String POST_LOGIN = Constant.BASE_URL + "users";
+    public static String POST_LOGIN = Constant.BASE_URL + "users/password";
 
 
     // LOGIN SCENARIO
@@ -139,6 +139,41 @@ public class UsersAPI {
     }
     // END INVALID TOKEN UPGRADE
     // END UPGrADE USERS
+
+
+    // PUT USERS PASSWORD
+    @Step("Upgrade new password users with valid token")
+    public void putPassword(File update){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(update);
+    }
+
+    @Step("Send users update with valid/invalid token")
+    public void putPasswordUsers(String token){
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + token)
+                .put(UsersAPI.PUT_USERS_PASSWORD);
+    }
+
+//    @Step("Post login with valid/invalid User")
+//    public void putPassword(File json) {
+//        SerenityRest.given()
+//                .contentType(ContentType.JSON)
+//                .body(json)
+//                .headers("Authorization", "Bearer " + Constant.BEARER_TOKEN);
+//    }
+
+//    @Step("Get users transaction ID with valid token/invalid")
+//    public void putUsersPassWithInvalid(String token){
+//        SerenityRest.given()
+//                .headers("Authorization", "Bearer " + token);
+//    }
+
+    @Step("Get data users without token following")
+    public void putUsersPasswordWhitoutToken(){
+        SerenityRest.given();
+    }
 
 }
 
